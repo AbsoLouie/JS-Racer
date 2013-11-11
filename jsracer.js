@@ -7,7 +7,7 @@ $(document).ready(function() {
   })
 
   var update_player_position = function(){
-    $(".player1_track .active").next().addClass("active")
+    $(".player1_track .active").removeClass("active").next().addClass("active")
   }
 
 
