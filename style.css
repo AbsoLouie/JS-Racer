@@ -1,0 +1,13 @@
+.race_table li{
+  list-style-type: none;
+  background-color: purple;
+  height: 20px;
+  width: 20px;
+  padding: 1px;
+  border: 1px solid black;
+  display:inline-block;
+}
+
+.race_table ul .active{
+  background-color: yellow;
+}
