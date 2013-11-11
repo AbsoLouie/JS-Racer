@@ -1,19 +1,26 @@
 $(document).ready(function() {
 
   $(document).on('keyup', function(event) {
-
-    if (event.which == 65) {
-      update_player_position("player1_track")
+    if (check_win(".player1") || check_win(".player2")) {
+      console.log("Game Over")
+    } else if (event.which == 65) {
+      update_player_position(".player1")
+      check_win(".player1")
+    } else if (event.which == 76) {
+      update_player_position(".player2")
+      check_win(".player2")
     }
-
-    if (event.which == 76) {
-      update_player_position("player2_track")
-    }
-
   })
 
-  var update_player_position = function(player_track){
-    $("." + player_track + " .active").removeClass("active").next().addClass("active")
+  var update_player_position = function(player){
+    $(player + "_track .active").removeClass("active").next().addClass("active")
+  }
+
+  var check_win = function(player) {
+    if ($(player + "_track .active")[0] == $(player + "_track .end")[0]) {
+      return true;
+    }
+    return false;
   }
 
 
