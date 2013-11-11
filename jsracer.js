@@ -29,4 +29,6 @@ $(document).ready(function() {
     $(".race_table ul li:first-child").addClass("active")
   }
 
+
+
 }) //end of ready
