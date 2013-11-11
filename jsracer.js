@@ -3,6 +3,7 @@ $(document).ready(function() {
   $(document).on('keyup', function(event) {
     if (check_win(".player1") || check_win(".player2")) {
       console.log("Game Over")
+      reset()
     } else if (event.which == 65) {
       update_player_position(".player1")
       check_win(".player1")
@@ -23,6 +24,9 @@ $(document).ready(function() {
     return false;
   }
 
-
+  var reset = function() {
+    $(".race_table ul .active").removeClass("active")
+    $(".race_table ul li:first-child").addClass("active")
+  }
 
 }) //end of ready
